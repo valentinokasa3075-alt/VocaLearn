@@ -1,0 +1,102 @@
+[
+    {
+        "frage": "Haus",
+        "antwort": "house",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Apfel",
+        "antwort": "apple",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Baum",
+        "antwort": "tree",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Auto",
+        "antwort": "car",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Buch",
+        "antwort": "book",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Wasser",
+        "antwort": "water",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Sonne",
+        "antwort": "sun",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Schule",
+        "antwort": "school",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Essen",
+        "antwort": "food",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Freund",
+        "antwort": "friend",
+        "kategorie": "Englisch"
+    },
+    {
+        "frage": "Haus",
+        "antwort": "maison",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Apfel",
+        "antwort": "pomme",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Baum",
+        "antwort": "arbre",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Auto",
+        "antwort": "voiture",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Buch",
+        "antwort": "livre",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Wasser",
+        "antwort": "eau",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Sonne",
+        "antwort": "soleil",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Schule",
+        "antwort": "\u00e9cole",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Essen",
+        "antwort": "nourriture",
+        "kategorie": "Franz\u00f6sisch"
+    },
+    {
+        "frage": "Freund",
+        "antwort": "ami",
+        "kategorie": "Franz\u00f6sisch"
+    }
+]
