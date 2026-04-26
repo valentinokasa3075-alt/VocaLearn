@@ -1,4 +1,31 @@
+# Hauptprogramm für den Vokabeltrainer VocaLearn
+# Dieses Programm ermöglicht es, Vokabeln zu speichern und im Quiz zu lernen
 
+
+# Funktion: Neue Vokabel hinzufügen
+def neue_vokabel_hinzufuegen():
+    # Benutzer gibt eine neue Frage (z.B. deutsches Wort) ein
+    frage = input("Gib das Wort oder die Frage ein: ")
+    
+    # Benutzer gibt die passende Antwort ein (z.B. Übersetzung)
+    antwort = input("Gib die richtige Antwort ein: ")
+    
+    # Benutzer wählt eine Kategorie (z.B. Englisch oder Französisch)
+    kategorie = input("Gib eine Kategorie ein (z.B. Englisch, Französisch): ")
+
+    # Vorhandene Vokabeln aus der JSON-Datei laden
+    vokabeln = lade_vokabeln()
+
+    # Neue Vokabel als Objekt der Klasse "Vokabel" erstellen
+    neue_vokabel = Vokabel(frage, antwort, kategorie)
+
+    # Objekt wird in ein Dictionary umgewandelt und zur Liste hinzugefügt
+    vokabeln.append(neue_vokabel.in_dictionary_umwandeln())
+
+    # Aktualisierte Vokabelliste wieder in die Datei speichern
+    speichere_vokabeln(vokabeln)
+
+    print("Vokabel wurde gespeichert.")
 
 # Hauptprogramm für VocaLearn
 
