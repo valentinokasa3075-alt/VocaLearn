@@ -1,6 +1,12 @@
+# Importe für Vokabeltrainer (Klasse, Datenbank und Zufall)
+
+import random
+from vokabel import Vokabel
+from datenbank import lade_vokabeln, speichere_vokabeln
+
+
 # Hauptprogramm für den Vokabeltrainer VocaLearn
 # Dieses Programm ermöglicht es, Vokabeln zu speichern und im Quiz zu lernen
-
 
 # Funktion: Neue Vokabel hinzufügen
 def neue_vokabel_hinzufuegen():
