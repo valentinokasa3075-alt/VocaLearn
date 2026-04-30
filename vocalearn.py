@@ -33,6 +33,18 @@ def neue_vokabel_hinzufuegen():
 
     print("Vokabel wurde gespeichert.")
 
+
+    # Funktion: Lernmodus starten
+def lernen_starten():
+
+    # Alle gespeicherten Vokabeln laden
+    vokabeln = lade_vokabeln()
+
+    # Wenn keine Vokabeln vorhanden sind, wird das Programm abgebrochen
+    if len(vokabeln) == 0:
+        print("Keine Vokabeln vorhanden.")
+        return
+
 # Hauptprogramm für VocaLearn
 
 # Funktion: Hauptmenü anzeigen und steuern
