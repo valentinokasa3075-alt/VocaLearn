@@ -64,6 +64,30 @@ def lernen_starten():
     # Benutzer wählt eine Kategorie aus
     auswahl = input("Wähle eine Kategorie (Nummer): ")
 
+    try:
+        auswahl = int(auswahl)
+
+        # Wenn letzte Option gewählt wurde → alle Kategorien
+        if auswahl == len(kategorien) + 1:
+            gewaehlte_kategorie = "ALLE"
+        else:
+            # sonst gewählte Kategorie aus Liste nehmen
+            gewaehlte_kategorie = kategorien[auswahl - 1]
+
+    except:
+        print("Ungültige Auswahl.")
+        return
+
+    gefilterte_vokabeln = []
+
+    # Vokabeln nach gewählter Kategorie filtern
+    for vokabel in vokabeln:
+        if gewaehlte_kategorie == "ALLE" or vokabel["kategorie"] == gewaehlte_kategorie:
+            gefilterte_vokabeln.append(vokabel)
+
+    # Nur die gefilterten Vokabeln werden verwendet
+    vokabeln = gefilterte_vokabeln
+
 # Hauptprogramm für VocaLearn
 
 # Funktion: Hauptmenü anzeigen und steuern
