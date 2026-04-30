@@ -44,6 +44,25 @@ def lernen_starten():
     if len(vokabeln) == 0:
         print("Keine Vokabeln vorhanden.")
         return
+    
+    print("\nVerfügbare Kategorien:")
+
+    kategorien = []
+
+    # Alle vorhandenen Kategorien aus den Vokabeln sammeln (ohne Duplikate)
+    for vokabel in vokabeln:
+        if vokabel["kategorie"] not in kategorien:
+            kategorien.append(vokabel["kategorie"])
+
+    # Kategorien nummeriert anzeigen
+    for i, kategorie in enumerate(kategorien):
+        print(f"{i+1} - {kategorie}")
+
+    # Zusätzliche Option: alle Kategorien gleichzeitig lernen
+    print(f"{len(kategorien)+1} - ALLE")
+
+    # Benutzer wählt eine Kategorie aus
+    auswahl = input("Wähle eine Kategorie (Nummer): ")
 
 # Hauptprogramm für VocaLearn
 
