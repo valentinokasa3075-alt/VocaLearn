@@ -88,6 +88,41 @@ def lernen_starten():
     # Nur die gefilterten Vokabeln werden verwendet
     vokabeln = gefilterte_vokabeln
 
+    # Zähler für richtige und falsche Antworten
+    richtige = 0
+    falsche = 0
+
+    # Liste für falsch beantwortete Vokabeln
+    falsche_vokabeln = []
+
+    # Vokabeln werden gemischt, damit die Reihenfolge zufällig ist
+    random.shuffle(vokabeln)
+
+    # Haupt-Lernschleife
+    for vokabel in vokabeln:
+
+        # Frage wird angezeigt (inkl. Kategorie zur Orientierung)
+        print(f"\nFrage ({vokabel['kategorie']}):", vokabel["frage"])
+        antwort = input("Antwort: ")
+
+        # Aus Dictionary wird wieder ein Vokabel-Objekt erstellt
+        aktuelle_vokabel = Vokabel(
+            vokabel["frage"],
+            vokabel["antwort"],
+            vokabel["kategorie"]
+        )
+
+        # Überprüfung der Antwort mithilfe der Methode der Klasse
+        if aktuelle_vokabel.pruefe_antwort(antwort):
+            print("Richtig!")
+            richtige += 1
+        else:
+            print("Falsch! Richtige Antwort:", aktuelle_vokabel.antwort)
+            falsche += 1
+            falsche_vokabeln.append(vokabel)
+
+
+
 # Hauptprogramm für VocaLearn
 
 # Funktion: Hauptmenü anzeigen und steuern
