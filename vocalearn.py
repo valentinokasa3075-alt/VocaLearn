@@ -121,6 +121,31 @@ def lernen_starten():
             falsche += 1
             falsche_vokabeln.append(vokabel)
 
+    # Ergebnis am Ende anzeigen
+    print("\nErgebnis:")
+    print("Richtig:", richtige)
+    print("Falsch:", falsche)
+
+    # Falls es falsche Antworten gab → nochmal üben
+    if len(falsche_vokabeln) > 0:
+        print("\n--- Wiederholung der falschen Antworten ---")
+
+        for vokabel in falsche_vokabeln:
+
+            print(f"\nFrage ({vokabel['kategorie']}):", vokabel["frage"])
+            antwort = input("Antwort: ")
+
+            aktuelle_vokabel = Vokabel(
+                vokabel["frage"],
+                vokabel["antwort"],
+                vokabel["kategorie"]
+            )
+
+            # Zweite Überprüfung
+            if aktuelle_vokabel.pruefe_antwort(antwort):
+                print("Jetzt richtig!")
+            else:
+                print("Immer noch falsch! Richtige Antwort:", aktuelle_vokabel.antwort)
 
 
 # Hauptprogramm für VocaLearn
