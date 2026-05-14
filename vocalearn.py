@@ -1,6 +1,9 @@
 # Importe für Vokabeltrainer (Klasse, Datenbank und Zufall)
 
 import random
+import os
+import webbrowser
+
 from vokabel import Vokabel
 from datenbank import lade_vokabeln, speichere_vokabeln
 
@@ -125,6 +128,34 @@ def lernen_starten():
     print("\nErgebnis:")
     print("Richtig:", richtige)
     print("Falsch:", falsche)
+
+    # Gesamtanzahl der beantworteten Fragen berechnen
+    gesamt = richtige + falsche
+
+    # Trefferquote in Prozent berechnen
+    prozent = (richtige / gesamt) * 100
+
+    # Trefferquote im Terminal anzeigen
+    print(f"Trefferquote: {prozent:.1f}%")
+
+    # Prüfen, ob die Statistik-Datei bereits existiert
+    datei_existiert = os.path.exists("lernstatistik.csv")
+
+    # Statistik-Datei öffnen oder neu erstellen
+    with open("lernstatistik.csv", "a", encoding="utf-8") as datei:
+        
+        # Falls die Datei neu ist → Überschriften hinzufügen
+        if not datei_existiert:
+            datei.write("Richtig,Falsch,Trefferquote\n")
+
+        # Lernergebnis in die CSV-Datei speichern
+        datei.write(f"{richtige},{falsche},{prozent:.1f}%\n")
+
+    # Statistik-Datei automatisch öffnen
+    if os.name == "nt":
+        os.system("start lernstatistik.csv")
+    else:
+        os.system("open lernstatistik.csv")
 
     # Falls es falsche Antworten gab → nochmal üben
     if len(falsche_vokabeln) > 0:
