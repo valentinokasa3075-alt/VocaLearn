@@ -91,6 +91,30 @@ def lernen_starten():
     # Nur die gefilterten Vokabeln werden verwendet
     vokabeln = gefilterte_vokabeln
 
+    # Benutzer wählt Anzahl der Fragen
+    print("\nWie viele Fragen möchtest du lernen?")
+    print("1 - 5 Fragen")
+    print("2 - 10 Fragen")
+    print("3 - Alle Fragen")
+
+    fragen_auswahl = input("Bitte wählen: ")
+
+    if fragen_auswahl == "1":
+        anzahl_fragen = 5
+
+    elif fragen_auswahl == "2":
+        anzahl_fragen = 10
+
+    else:
+        anzahl_fragen = len(vokabeln)
+
+    # Falls weniger Vokabeln vorhanden sind als gewählt
+    if anzahl_fragen > len(vokabeln):
+        anzahl_fragen = len(vokabeln)
+
+    # Zufällige Auswahl der gewünschten Anzahl
+    vokabeln = random.sample(vokabeln, anzahl_fragen)
+
     # Zähler für richtige und falsche Antworten
     richtige = 0
     falsche = 0
