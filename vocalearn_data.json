@@ -1,102 +1,365 @@
 [
     {
-        "frage": "Haus",
-        "antwort": "house",
-        "kategorie": "Englisch"
+        "frage": "Hund",
+        "antwort": "dog",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Apfel",
-        "antwort": "apple",
-        "kategorie": "Englisch"
+        "frage": "Katze",
+        "antwort": "cat",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Baum",
-        "antwort": "tree",
-        "kategorie": "Englisch"
+        "frage": "Fenster",
+        "antwort": "window",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Auto",
-        "antwort": "car",
-        "kategorie": "Englisch"
+        "frage": "Tisch",
+        "antwort": "table",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Buch",
-        "antwort": "book",
-        "kategorie": "Englisch"
+        "frage": "Stuhl",
+        "antwort": "chair",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Wasser",
-        "antwort": "water",
-        "kategorie": "Englisch"
+        "frage": "Straße",
+        "antwort": "street",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Sonne",
-        "antwort": "sun",
-        "kategorie": "Englisch"
+        "frage": "Stadt",
+        "antwort": "city",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Schule",
-        "antwort": "school",
-        "kategorie": "Englisch"
+        "frage": "Flughafen",
+        "antwort": "airport",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Essen",
-        "antwort": "food",
-        "kategorie": "Englisch"
+        "frage": "Krankenhaus",
+        "antwort": "hospital",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Freund",
-        "antwort": "friend",
-        "kategorie": "Englisch"
+        "frage": "Zeitung",
+        "antwort": "newspaper",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Haus",
-        "antwort": "maison",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Zug",
+        "antwort": "train",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Apfel",
-        "antwort": "pomme",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Bahnhof",
+        "antwort": "station",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Baum",
-        "antwort": "arbre",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Lehrer",
+        "antwort": "teacher",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Auto",
-        "antwort": "voiture",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Schüler",
+        "antwort": "student",
+        "kategorie": "Englisch",
+        "niveau": "B1"
     },
     {
-        "frage": "Buch",
-        "antwort": "livre",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Familie",
+        "antwort": "family",
+        "kategorie": "Englisch",
+        "niveau": "B1"
+    },
+
+    {
+        "frage": "Erfahrung",
+        "antwort": "experience",
+        "kategorie": "Englisch",
+        "niveau": "B2"
     },
     {
-        "frage": "Wasser",
-        "antwort": "eau",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Entscheidung",
+        "antwort": "decision",
+        "kategorie": "Englisch",
+        "niveau": "B2"
     },
     {
-        "frage": "Sonne",
-        "antwort": "soleil",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Möglichkeit",
+        "antwort": "opportunity",
+        "kategorie": "Englisch",
+        "niveau": "B2"
     },
     {
-        "frage": "Schule",
-        "antwort": "\u00e9cole",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Verbesserung",
+        "antwort": "improvement",
+        "kategorie": "Englisch",
+        "niveau": "B2"
     },
     {
-        "frage": "Essen",
-        "antwort": "nourriture",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Verantwortung",
+        "antwort": "responsibility",
+        "kategorie": "Englisch",
+        "niveau": "B2"
     },
     {
-        "frage": "Freund",
-        "antwort": "ami",
-        "kategorie": "Franz\u00f6sisch"
+        "frage": "Entwicklung",
+        "antwort": "development",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Kenntnisse",
+        "antwort": "knowledge",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Umgebung",
+        "antwort": "environment",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Verhalten",
+        "antwort": "behavior",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Leistung",
+        "antwort": "performance",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Forschung",
+        "antwort": "research",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Kommunikation",
+        "antwort": "communication",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Veränderung",
+        "antwort": "change",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Zusammenarbeit",
+        "antwort": "cooperation",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Unterstützung",
+        "antwort": "support",
+        "kategorie": "Englisch",
+        "niveau": "B2"
+    },
+
+    {
+        "frage": "Hund",
+        "antwort": "chien",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Katze",
+        "antwort": "chat",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Fenster",
+        "antwort": "fenêtre",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Tisch",
+        "antwort": "table",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Stuhl",
+        "antwort": "chaise",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Straße",
+        "antwort": "rue",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Stadt",
+        "antwort": "ville",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Flughafen",
+        "antwort": "aéroport",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Krankenhaus",
+        "antwort": "hôpital",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Zeitung",
+        "antwort": "journal",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Zug",
+        "antwort": "train",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Bahnhof",
+        "antwort": "gare",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Lehrer",
+        "antwort": "professeur",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Schüler",
+        "antwort": "élève",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+    {
+        "frage": "Familie",
+        "antwort": "famille",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B1"
+    },
+
+    {
+        "frage": "Erfahrung",
+        "antwort": "expérience",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Entscheidung",
+        "antwort": "décision",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Möglichkeit",
+        "antwort": "possibilité",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Verbesserung",
+        "antwort": "amélioration",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Verantwortung",
+        "antwort": "responsabilité",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Entwicklung",
+        "antwort": "développement",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Kenntnisse",
+        "antwort": "connaissances",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Umgebung",
+        "antwort": "environnement",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Verhalten",
+        "antwort": "comportement",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Leistung",
+        "antwort": "performance",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Forschung",
+        "antwort": "recherche",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Kommunikation",
+        "antwort": "communication",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Veränderung",
+        "antwort": "changement",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Zusammenarbeit",
+        "antwort": "coopération",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
+    },
+    {
+        "frage": "Unterstützung",
+        "antwort": "soutien",
+        "kategorie": "Franz\u00f6sisch",
+        "niveau": "B2"
     }
 ]
