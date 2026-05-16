@@ -22,11 +22,14 @@ def neue_vokabel_hinzufuegen():
     # Benutzer wählt eine Kategorie (z.B. Englisch oder Französisch)
     kategorie = input("Gib eine Kategorie ein (z.B. Englisch, Französisch): ")
 
+    # Benutzer wählt ein Niveau (z.B. B1 oder B2)
+    niveau = input("Gib ein Niveau ein (z.B. B1, B2): ")
+
     # Vorhandene Vokabeln aus der JSON-Datei laden
     vokabeln = lade_vokabeln()
 
     # Neue Vokabel als Objekt der Klasse "Vokabel" erstellen
-    neue_vokabel = Vokabel(frage, antwort, kategorie)
+    neue_vokabel = Vokabel(frage, antwort, kategorie, niveau)
 
     # Objekt wird in ein Dictionary umgewandelt und zur Liste hinzugefügt
     vokabeln.append(neue_vokabel.in_dictionary_umwandeln())
@@ -112,7 +115,37 @@ def lernen_starten():
     if anzahl_fragen > len(vokabeln):
         anzahl_fragen = len(vokabeln)
 
-    # Zufällige Auswahl der gewünschten Anzahl
+    # Benutzer wählt ein Niveau
+    print("\nWelches Niveau möchtest du lernen?")
+    print("1 - B1")
+    print("2 - B2")
+    print("3 - Alle")
+
+    niveau_auswahl = input("Bitte wählen: ")
+
+    if niveau_auswahl == "1":
+        gewaehltes_niveau = "B1"
+
+    elif niveau_auswahl == "2":
+        gewaehltes_niveau = "B2"
+
+    else:
+        gewaehltes_niveau = "ALLE"
+
+    gefilterte_niveaus = []
+
+    # Vokabeln nach Niveau filtern
+    for vokabel in vokabeln:
+        if gewaehltes_niveau == "ALLE" or vokabel["niveau"] == gewaehltes_niveau:
+            gefilterte_niveaus.append(vokabel)
+
+    vokabeln = gefilterte_niveaus
+
+    # Falls weniger Vokabeln vorhanden sind als gewählt
+    if anzahl_fragen > len(vokabeln):
+        anzahl_fragen = len(vokabeln)
+
+    # Zufällige Auswahl der gewünschten Anzahl an Vokabeln
     vokabeln = random.sample(vokabeln, anzahl_fragen)
 
     # Zähler für richtige und falsche Antworten
@@ -122,21 +155,19 @@ def lernen_starten():
     # Liste für falsch beantwortete Vokabeln
     falsche_vokabeln = []
 
-    # Vokabeln werden gemischt, damit die Reihenfolge zufällig ist
-    random.shuffle(vokabeln)
-
     # Haupt-Lernschleife
     for vokabel in vokabeln:
 
         # Frage wird angezeigt (inkl. Kategorie zur Orientierung)
-        print(f"\nFrage ({vokabel['kategorie']}):", vokabel["frage"])
+        print(f"\nFrage ({vokabel['kategorie']} | {vokabel['niveau']}):", vokabel["frage"])
         antwort = input("Antwort: ")
 
         # Aus Dictionary wird wieder ein Vokabel-Objekt erstellt
         aktuelle_vokabel = Vokabel(
             vokabel["frage"],
             vokabel["antwort"],
-            vokabel["kategorie"]
+            vokabel["kategorie"],
+            vokabel["niveau"]
         )
 
         # Überprüfung der Antwort mithilfe der Methode der Klasse
@@ -193,7 +224,8 @@ def lernen_starten():
             aktuelle_vokabel = Vokabel(
                 vokabel["frage"],
                 vokabel["antwort"],
-                vokabel["kategorie"]
+                vokabel["kategorie"],
+                vokabel["niveau"]
             )
 
             # Zweite Überprüfung
