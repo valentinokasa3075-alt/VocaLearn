@@ -25,6 +25,26 @@ def neue_vokabel_hinzufuegen():
     # Benutzer wählt ein Niveau (z.B. B1 oder B2)
     niveau = input("Gib ein Niveau ein (z.B. B1, B2): ")
 
+    # Benutzer überprüft die eingegebenen Daten vor dem Speichern
+    print("\nBitte überprüfe deine Eingaben:")
+    print("Frage:", frage)
+    print("Antwort:", antwort)
+    print("Kategorie:", kategorie)
+    print("Niveau:", niveau)
+
+    # Benutzer entscheidet, ob die Eingaben korrekt sind
+    print("\nIst alles korrekt?")
+    print("1 - Ja, speichern")
+    print("2 - Nein, neu eingeben")
+
+    bestaetigung = input("Bitte wählen: ")
+
+    # Falls die Eingaben falsch sind → Funktion neu starten
+    if bestaetigung == "2":
+        print("\nDie Vokabel wird erneut eingegeben.\n")
+        neue_vokabel_hinzufuegen()
+        return
+
     # Vorhandene Vokabeln aus der JSON-Datei laden
     vokabeln = lade_vokabeln()
 
