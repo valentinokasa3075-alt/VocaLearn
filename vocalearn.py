@@ -230,10 +230,10 @@ def lernen_starten():
 
             # Zweite Überprüfung
             if aktuelle_vokabel.pruefe_antwort(antwort):
-                print("Jetzt richtig!")
+                print("Stark! Beim zweiten Versuch richtig beantwortet 💪")
             else:
-                print("Immer noch falsch! Richtige Antwort:", aktuelle_vokabel.antwort)
-
+                print("Nicht schlimm 😄 Diese Vokabel braucht noch etwas Übung.")
+                print("Richtige Antwort:", aktuelle_vokabel.antwort)
 
 # Hauptprogramm für VocaLearn
 
