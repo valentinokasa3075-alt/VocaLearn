@@ -14,13 +14,13 @@ from datenbank import lade_vokabeln, speichere_vokabeln
 # Funktion: Neue Vokabel hinzufügen
 def neue_vokabel_hinzufuegen():
     # Benutzer gibt eine neue Frage (z.B. deutsches Wort) ein
-    frage = input("Gib das Wort oder die Frage ein: ")
+    frage = input("Gib das Wort oder die Frage ein: ").strip()
     
     # Benutzer gibt die passende Antwort ein (z.B. Übersetzung)
-    antwort = input("Gib die richtige Antwort ein: ")
+    antwort = input("Gib die richtige Antwort ein: ").strip()
     
     # Benutzer wählt eine Kategorie (z.B. Englisch oder Französisch)
-    kategorie = input("Gib eine Kategorie ein (z.B. Englisch, Französisch): ")
+    kategorie = input("Gib eine Kategorie ein (z.B. Englisch, Französisch): ").strip()
 
     # Prüfen ob gültige Kategorie eingegeben wurde
     if kategorie != "Englisch" and kategorie != "Französisch":
@@ -28,7 +28,7 @@ def neue_vokabel_hinzufuegen():
         return
 
     # Benutzer wählt ein Niveau (z.B. B1 oder B2)
-    niveau = input("Gib ein Niveau ein (z.B. B1, B2): ")
+    niveau = input("Gib ein Niveau ein (z.B. B1, B2): ").strip()
 
     # Prüfen ob gültiges Niveau eingegeben wurde
     if niveau != "B1" and niveau != "B2":
@@ -47,7 +47,7 @@ def neue_vokabel_hinzufuegen():
     print("1 - Ja, speichern")
     print("2 - Nein, neu eingeben")
 
-    bestaetigung = input("Bitte wählen: ")
+    bestaetigung = input("Bitte wählen: ").strip()
 
     # Falls die Eingaben falsch sind → Funktion neu starten
     if bestaetigung == "2":
@@ -69,7 +69,7 @@ def neue_vokabel_hinzufuegen():
 
     print("Vokabel wurde erfolgreich gespeichert.")
 
-    # Funktion: Vokabel löschen
+# Funktion: Vokabel löschen
 def vokabel_loeschen():
 
     # Gespeicherte Vokabeln laden
@@ -90,6 +90,11 @@ def vokabel_loeschen():
         # Benutzer wählt Nummer der Vokabel
         auswahl = int(input("\nWelche Vokabel möchtest du löschen? "))
 
+        # Prüfen ob gültige Nummer eingegeben wurde
+        if auswahl < 1 or auswahl > len(vokabeln):
+            print("Ungültige Nummer.")
+            return
+
         # Gewählte Vokabel aus Liste löschen
         del vokabeln[auswahl - 1]
 
@@ -101,7 +106,7 @@ def vokabel_loeschen():
     except:
         print("Ungültige Eingabe.")
 
-    # Funktion: Lernmodus starten
+# Funktion: Lernmodus starten
 def lernen_starten():
 
     # Alle gespeicherten Vokabeln laden
@@ -129,7 +134,7 @@ def lernen_starten():
     print(f"{len(kategorien)+1} - ALLE")
 
     # Benutzer wählt eine Kategorie aus
-    auswahl = input("Wähle eine Kategorie (Nummer): ")
+    auswahl = input("Wähle eine Kategorie (Nummer): ").strip()
 
     try:
         auswahl = int(auswahl)
@@ -161,7 +166,7 @@ def lernen_starten():
     print("2 - 10 Fragen")
     print("3 - Alle Fragen")
 
-    fragen_auswahl = input("Bitte wählen: ")
+    fragen_auswahl = input("Bitte wählen: ").strip()
 
     if fragen_auswahl == "1":
         anzahl_fragen = 5
@@ -186,7 +191,7 @@ def lernen_starten():
     print("2 - B2")
     print("3 - Alle")
 
-    niveau_auswahl = input("Bitte wählen: ")
+    niveau_auswahl = input("Bitte wählen: ").strip()
 
     if niveau_auswahl == "1":
         gewaehltes_niveau = "B1"
@@ -194,8 +199,12 @@ def lernen_starten():
     elif niveau_auswahl == "2":
         gewaehltes_niveau = "B2"
 
-    else:
+    elif niveau_auswahl == "3":
         gewaehltes_niveau = "ALLE"
+
+    else:
+        print("Ungültige Eingabe.")
+        return
 
     gefilterte_niveaus = []
 
@@ -225,7 +234,7 @@ def lernen_starten():
 
         # Frage wird angezeigt (inkl. Kategorie zur Orientierung)
         print(f"\nFrage ({vokabel['kategorie']} | {vokabel['niveau']}):", vokabel["frage"])
-        antwort = input("Antwort: ")
+        antwort = input("Antwort: ").strip()
 
         # Aus Dictionary wird wieder ein Vokabel-Objekt erstellt
         aktuelle_vokabel = Vokabel(
@@ -245,7 +254,7 @@ def lernen_starten():
             falsche_vokabeln.append(vokabel)
 
     # Ergebnis am Ende anzeigen
-    print("\nErgebnis:")
+    print("\n===== Lernergebnis =====")
     print("Richtig:", richtige)
     print("Falsch:", falsche)
 
@@ -284,7 +293,7 @@ def lernen_starten():
         for vokabel in falsche_vokabeln:
 
             print(f"\nFrage ({vokabel['kategorie']}):", vokabel["frage"])
-            antwort = input("Antwort: ")
+            antwort = input("Antwort: ").strip()
 
             aktuelle_vokabel = Vokabel(
                 vokabel["frage"],
@@ -320,7 +329,7 @@ def hauptmenue():
         print("3 - Lernen starten")
         print("4 - Programm beenden")
 
-        auswahl = input("Bitte wählen: ")
+        auswahl = input("Bitte wählen: ").strip()
 
         # Je nach Eingabe wird eine Funktion ausgeführt
         if auswahl == "1":
