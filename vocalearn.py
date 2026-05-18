@@ -260,6 +260,13 @@ def lernen_starten():
 # Funktion: Hauptmenü anzeigen und steuern
 def hauptmenue():
 
+    print("\n===================================")
+    print("📚 Willkommen bei VocaLearn 📚")
+    print("Lerne spielerisch Englisch und Französisch 😄")
+    print("Viel Spass beim Lernen und Üben!")
+    print("Entwickelt von Valentino & Erduan")
+    print("===================================\n")
+
     while True:
 
         # Menü wird angezeigt
