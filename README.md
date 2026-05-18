@@ -1,125 +1,159 @@
 # VocaLearn
 
-## Projektname & Team
-
 **Projektname:** VocaLearn
 
-**Teammitglieder:**
-- Valentino
-- Erduan
+**Team:** Valentino, Erduan
 
-## Projektbeschreibung
+## **Projektbeschreibung**
 
-### Was
-Entwicklung eines Vokabeltrainers mit Python. Das Programm ermöglicht die Speicherung und Abfrage von Lerninhalten, um Benutzern beim Erlernen von Vokabeln zu helfen.
+- **Kurz:** VocaLearn ist ein terminalbasierter Vokabeltrainer in Python zum Erstellen, Verwalten und Abfragen von Vokabeln (aktuell Englisch & Französisch).
+- **Zweck:** Unterstützt gezieltes Wiederholen, fördert Lernfortschritte und dient als Praxisprojekt für OOP- und Datei-IO-Konzepte.
 
-### Wie
-Das Programm ist textbasiert und läuft im Terminal. Die Daten werden in einer JSON-Datei gespeichert. Es verwendet objektorientierte Programmierung (OOP) mit Klassen zur Strukturierung des Codes.
+## **Minimalziel**
 
-### Warum
-Der Vokabeltrainer unterstützt Benutzer beim effektiven Lernen von Vokabeln. Das Projekt dient der Anwendung und Vertiefung von Python-Kenntnissen sowie der Umsetzung eines realistischen Softwareprojekts.
+- **Vokabeleingabe:** Benutzer können Vokabeln inkl. Frage, Antwort, Kategorie und Niveau hinzufügen (`neue_vokabel_hinzufuegen()`).
+- **Persistenz:** Speicherung und Laden aller Vokabeln in `vocalearn_data.json` über `datenbank.py`.
+- **Lernmodus:** Zufällige Abfrage einer auswählbaren Anzahl Vokabeln mit sofortigem Feedback (`lernen_starten()`).
+- **Auswertung:** Anzeige von richtig/falsch-Zählern und Trefferquote in Prozent; Speicherung der Statistik in `lernstatistik.csv`.
 
-## Ziel des Projekts
+Diese Kernfunktionen sind vollständig implementiert und bilden die Basis des Programms.
 
-Das Hauptziel ist die Entwicklung eines funktionierenden Lernprogramms. Dabei sollen Python-Grundlagen angewendet, objektorientiertes Programmieren eingesetzt und eine strukturierte, erweiterbare Software erstellt werden.
+## **Schnellstart**
 
-## Minimalziel
+1. Python 3 installieren.
+2. Im Projektordner ausführen:
 
-Das Minimalziel umfasst die folgenden Kernfunktionen, die klar und detailliert umgesetzt wurden:
+```bash
+python3 vocalearn.py
+```
 
-- **Vokabeln eingeben:** Benutzer können neue Vokabeln mit Übersetzungen über die Eingabeaufforderung hinzufügen.
-- **Vokabeln speichern:** Alle eingegebenen Vokabeln werden automatisch in einer JSON-Datei gespeichert, um Datenpersistenz zu gewährleisten.
-- **Vokabeln laden:** Beim Programmstart werden vorhandene Vokabeln aus der JSON-Datei geladen, sodass der Lernfortschritt erhalten bleibt.
-- **Abfragemodus starten:** Ein dedizierter Modus zum Testen des Wissens, in dem Vokabeln abgefragt werden.
-- **Antworten überprüfen:** Das Programm vergleicht die Benutzerantworten mit den gespeicherten korrekten Übersetzungen.
-- **Ausgabe von richtig/falsch:** Sofortiges Feedback nach jeder Antwort, ob sie korrekt oder falsch ist.
-- **Anzeige einer Auswertung:** Am Ende des Abfragemodus wird eine Zusammenfassung mit der Anzahl richtiger und falscher Antworten sowie einer prozentualen Bewertung angezeigt.
+3. Menü folgen: Vokabeln hinzufügen → Lernen starten → Statistik einsehen.
 
-Diese Funktionen bilden die Basis des Programms und sind vollständig implementiert.
+## **Erweiterungen (bereits umgesetzt)**
 
-## Erweiterungen (Iteration / Weiterentwicklung)
+- **Kategorien-System:** Vokabeln sind kategorisiert (z.B. `Englisch`, `Französisch`). Der Benutzer kann eine Kategorie oder `ALLE` wählen.
+- **Niveausystem:** Jede Vokabel trägt ein Niveau (`B1` oder `B2`); Filterung im Lernmodus ist möglich.
+- **B1/B2-Filter:** Auswahl des gewünschten Niveaus vor dem Start der Abfrage.
+- **Zufällige Fragenauswahl:** Auswahl von N zufälligen Vokabeln per `random.sample`.
+- **Wiederholung falscher Antworten:** Falsch beantwortete Vokabeln werden am Ende nochmals abgefragt.
+- **Vokabel löschen:** Interaktive Löschfunktion mit nummerierter Auswahl (`vokabel_loeschen()`).
+- **CSV-Lernstatistik:** Lernergebnisse werden in `lernstatistik.csv` angehängt und zur Auswertung geöffnet.
 
-### Bereits umgesetzte Erweiterungen
+## **Technische Umsetzung**
 
-Über das Minimalziel hinaus wurden folgende Erweiterungen implementiert, um das Programm leistungsfähiger und benutzerfreundlicher zu machen:
+- **Sprache & Laufzeit:** Python 3, terminalbasiert.
+- **Dateien und Verantwortlichkeiten:**
+	- `vocalearn.py`: Hauptprogramm, Menü und Benutzerinteraktion.
+	- `vokabel.py`: Klasse `Vokabel` mit Methoden `pruefe_antwort()` und `in_dictionary_umwandeln()`.
+	- `datenbank.py`: Funktionen `lade_vokabeln()` und `speichere_vokabeln()` für JSON-IO.
+	- `vocalearn_data.json`: Persistente Datendatei (Speicherformat JSON).
+	- `lernstatistik.csv`: Aufgezeichnete Lernläufe (Richtig, Falsch, Trefferquote).
 
-- **Kategorien:** Unterstützung für verschiedene Sprachkategorien wie Englisch und Französisch, um das Lernen thematisch zu organisieren.
-- **Mehrere Sprachen:** Möglichkeit, Vokabeln in verschiedenen Sprachen zu speichern und abzufragen.
-- **"ALLE"-Modus:** Ein gemischter Lernmodus, in dem Vokabeln aus allen Kategorien zufällig abgefragt werden.
-- **Wiederholung falscher Antworten:** Nach dem ersten Durchlauf werden nur die falsch beantworteten Vokabeln erneut abgefragt, um gezieltes Nachlernen zu ermöglichen.
-- **Objektorientierte Umsetzung:** Verwendung einer dedizierten Klasse "Vokabel" zur Kapselung der Daten und Methoden.
+- **Konzepte & Muster:** OOP (Kapselung der Vokabeln), modulare Struktur, einfache CLI-Interaktion, Datei-IO (JSON/CSV), Schleifen & Validierung.
 
-Diese Erweiterungen zeigen, dass das Team über das Minimalziel hinaus gearbeitet und zusätzliche Funktionalitäten erfolgreich umgesetzt hat.
+## **Programmablauf (Kurz)**
 
-### Mögliche zukünftige Erweiterungen
+1. Programmstart → `hauptmenue()`.
+2. Menü: Neue Vokabel hinzufügen, Vokabel löschen, Lernen starten, Beenden.
+3. Bei Hinzufügen: Eingabe von Frage, Antwort, Kategorie, Niveau → Validierung → Speichern.
+4. Beim Lernen: Kategorienliste anzeigen → Kategorie/Niveau wählen → Anzahl der Fragen wählen → Zufällige Auswahl → Abfrage.
+5. Ergebnisse: Anzeige Richtig/Falsch, Trefferquote, Anfügen an `lernstatistik.csv` und Öffnen der CSV.
+6. Falls Fehler: Falsch beantwortete Vokabeln werden sofort wiederholt.
 
-Für die Weiterentwicklung des Projekts wurden folgende zusätzliche Erweiterungen identifiziert:
+## **Benutzerfunktionen (Detail)**
 
-- **Grafische Benutzeroberfläche (GUI):** Entwicklung einer benutzerfreundlichen Oberfläche zur einfacheren Bedienung des Programms.
-- **Lernstatistik:** Anzeige des individuellen Lernfortschritts, z.B. Anzahl richtiger und falscher Antworten über mehrere Durchläufe hinweg.
-- **Multiple-Choice-Modus:** Alternative Abfragemethode mit vorgegebenen Antwortmöglichkeiten.
-- **Erweiterung um weitere Sprachen:** Unterstützung zusätzlicher Sprachen zur Erweiterung des Einsatzbereichs.
-- **Benutzerverwaltung:** Möglichkeit, mehrere Benutzer anzulegen und individuelle Fortschritte zu speichern.
+- **Neue Vokabel hinzufügen (`neue_vokabel_hinzufuegen`)**: Interaktive Eingabe, Validierung für Kategorie (`Englisch` oder `Französisch`) und Niveau (`B1` oder `B2`), Bestätigung vor Speichern.
+- **Vokabel löschen (`vokabel_loeschen`)**: Nummerierte Anzeige aller Einträge, Auswahl per Index, Speichern nach Löschung.
+- **Lernmodus (`lernen_starten`)**: Kategorieauswahl inkl. `ALLE`, Auswahl der Frageanzahl (5, 10, Alle), Niveau-Auswahl (B1/B2/Alle), zufällige Auswahl per `random.sample`, sofortiges Feedback.
 
-Diese möglichen Erweiterungen zeigen, dass das Projekt flexibel aufgebaut ist und sich in Zukunft weiter ausbauen lässt.
+## **Eingabevalidierung & Benutzerfreundlichkeit**
 
-## Technische Umsetzung
+- Validierung für Kategorie und Niveau bei der Eingabe (Akzeptierte Werte: `Englisch`, `Französisch`, `B1`, `B2`).
+- Numerische Auswahl (z. B. bei Lösch- und Kategorienwahl) mit Fehlerbehandlung und freundlichen Fehlermeldungen.
+- Bestätigungsabfrage vor dem finalen Speichern neuer Vokabeln, um Eingabefehler zu vermeiden.
 
-**Programmiersprache:** Python
+## **OOP / Klassenstruktur**
 
-**Datenformat:** JSON
+- `Vokabel` (in `vokabel.py`):
+	- Attribute: `frage`, `antwort`, `kategorie`, `niveau`.
+	- Methoden: `pruefe_antwort(eingabe)` — fallunabhängiger Vergleich; `in_dictionary_umwandeln()` — serialisierbares Dict.
 
-**Struktur:**
-- `vocalearn.py`: Enthält die Hauptlogik, das Menü und die Benutzerinteraktion.
-- `vokabel.py`: Definiert die Klasse "Vokabel" für die Datenstruktur.
-- `datenbank.py`: Behandelt das Laden und Speichern der Daten in die JSON-Datei.
-- `vocalearn_data.json`: JSON-Datei zur Speicherung der Vokabeldaten.
+Die Klasse kapselt Daten und Validierungslogik, der Rest des Programms arbeitet mit Dictionary-Repräsentationen für einfache JSON-Serialisierung.
 
-**Verwendete Konzepte:**
-- Funktionen zur Modularisierung des Codes
-- Schleifen für wiederholte Abläufe (z.B. Abfragen)
-- Bedingungen für Entscheidungen (z.B. richtige/falsche Antworten)
-- Listen und Dictionaries zur Datenverwaltung
-- Klassen und Objekte für objektorientierte Programmierung
+## **JSON Speicherung**
 
-Das Projekt wurde mit Git versioniert und auf GitHub verwaltet, um Änderungen nachvollziehbar zu machen und die Zusammenarbeit im Team zu unterstützen.
+- Speicherung: `speichere_vokabeln(vokabeln)` schreibt die komplette Liste als JSON in `vocalearn_data.json`.
+- Laden: `lade_vokabeln()` liest die Datei und liefert die Vokabelliste (leer, falls Datei fehlt oder fehlerhaft).
+- Pfadhandling: `datenbank.py` verwendet den Ordner der Datei als Basis, sodass relative Pfade konsistent sind.
 
-## Programmablauf
+## **CSV Lernstatistik**
 
-Der Programmablauf ist einfach und benutzerfreundlich gestaltet:
+- Format: `Richtig,Falsch,Trefferquote` als Header (wird bei Neuanlage geschrieben).
+- Jeder Lernlauf hängt eine neue Zeile an: z. B. `3,2,60.0%`.
+- Datei: `lernstatistik.csv` wird nach dem Schreiben automatisch geöffnet (plattformabhängig).
 
-1. Der Benutzer startet das Programm.
-2. Ein Hauptmenü erscheint mit Optionen wie Vokabeln hinzufügen, Lernmodus starten usw.
-3. Der Benutzer wählt eine Option aus.
-4. Bei Bedarf werden Vokabeln aus der JSON-Datei geladen.
-5. Im Lernmodus wird eine Kategorie ausgewählt.
-6. Fragen werden nacheinander gestellt, und der Benutzer gibt Antworten ein.
-7. Jede Antwort wird überprüft und Feedback gegeben.
-8. Nach allen Fragen wird eine Ergebnisauswertung angezeigt.
-9. Falsche Antworten werden in einem separaten Durchlauf wiederholt.
+## **Kategorien & Niveau-System**
 
-Zur Verbesserung der Benutzerfreundlichkeit wird im Lernmodus die Kategorie angezeigt, damit klar ist, in welcher Sprache geantwortet werden muss.
+- Kategorien sind validiert und auf die Werte `Englisch` und `Französisch` beschränkt.
+- Niveau: Zwei feste Stufen `B1` und `B2`; Filter im Lernmodus ermöglicht gezieltes Training.
 
-## Teamarbeit
+## **B1/B2 Filter**
 
-**Valentino:**
-- Detaillierte Abläufe folgen..
+- Im Lernmodus kann der Benutzer vor dem Start ein Niveau wählen: nur B1, nur B2 oder Alle. Die Liste der Vokabeln wird entsprechend gefiltert.
 
-**Erduan:**
-- Detaillierte Abläufe folgen..
+## **Wiederholung falscher Antworten**
 
-## Projektplan
+- Nach dem ersten Durchlauf werden alle falsch beantworteten Vokabeln gesammelt und in einem zusätzlichen Durchgang noch einmal abgefragt, um gezieltes Wiederholen zu unterstützen.
 
-Der Projektplan wurde schrittweise umgesetzt:
+## **Zufällige Fragenauswahl & Trefferquote**
 
-1. Planung der Idee und Konzeption des Projekts
-2. Umsetzung des Minimalziels mit den Kernfunktionen
-3. Testen des Programms auf Funktionalität und Fehlerfreiheit
-4. Hinzufügen der Erweiterungen zur Verbesserung
-5. Strukturverbesserung durch Einführung von OOP
-6. Erstellung der Dokumentation
-7. Vorbereitung der Präsentation
+- Fragen werden mit `random.sample()` zufällig ausgewählt, sodass Wiederholungen innerhalb eines Durchlaufs vermieden werden.
+- Trefferquote wird als Prozentwert berechnet: $\text{Trefferquote} = \frac{Richtig}{Gesamt} \times 100$ und mit einer Nachkommastelle angezeigt.
 
-## Fazit / Erkenntnisse
+## **Benutzeroberfläche / UI-Verbesserungen (CLI)**
 
-folgen..
+- Klar strukturiertes Hauptmenü (`hauptmenue()`), Emojis zur lockeren Visualisierung und erklärende Texte für Optionen.
+- Lesbare Darstellung der Kategorie- und Niveau-Informationen neben jeder Frage.
+- Freundliche Fehlermeldungen und einfache, konsistente Eingabeaufforderungen.
+
+## **Teamarbeit**
+
+- **Valentino:** Hauptverantwortung für Programmlogik, JSON/CSV-Handling und Dokumentation.
+- **Erduan:** Unterstützung bei Architektur, Testläufen, UI-Feinschliff und Code-Review.
+
+## **Herausforderungen & Erkenntnisse**
+
+- **Versionierung & Zusammenarbeit (Git/GitHub):** Umgang mit Branches, Staging, Pull/Push und gelegentlichen Merge-Konflikten erforderte klare Commit-Nachrichten und Abstimmung im Team; durch regelmässige Pulls und gezieltes Stashen wurden Konflikte reduziert.
+
+- **Projektstruktur:** Die Aufteilung in mehrere Module (`vocalearn.py`, `vokabel.py`, `datenbank.py`) verbesserte Lesbarkeit und Wartbarkeit. Die modulare Struktur erleichterte spätere Erweiterungen und Tests.
+
+- **Objektorientierung:** Die Einführung der Klasse `Vokabel` förderte das Verständnis für Kapselung und wiederverwendbare Methoden; dies vereinfacht Validierung und Serialisierung der Daten.
+
+- **Datenpersistenz (JSON):** Arbeiten mit `vocalearn_data.json` machte Fehlerquellen wie fehlende Dateien und Encoding-Probleme sichtbar; robuste Lade-/Speicherfunktionen und UTF-8-Encoding verbesserten die Zuverlässigkeit.
+
+- **Fehlerbehandlung & Validierung:** Validierung von Kategorien und Niveaus sowie defensives Parsen numerischer Eingaben verringerten Laufzeitfehler und verbesserten die Nutzerführung.
+
+- **Debugging & Logikfehler:** Kleinere Logikfehler wurden iterativ identifiziert und behoben; systematisches Testen einzelner Funktionen und gezieltes Logging beschleunigten die Fehlersuche.
+
+- **Benutzerfreundlichkeit:** Durch klare Menüstrukturen, Bestätigungsabfragen und lesbare Ausgaben wurde die Bedienbarkeit deutlich verbessert.
+
+Diese Erkenntnisse zeigen, wie wiederholte Tests, modulare Struktur und abgestimmte Teamprozesse die Codequalität und Wartbarkeit im Verlauf des Projekts erhöht haben.
+
+## **Weiteres / ToDo**
+
+- Weitere Tests zur Überprüfung der Programmfunktionen.
+- Verbesserte Eingabevalidierung und Vermeidung von Fehleingaben.
+- Weitere Komfortfunktionen für den Lernmodus und den Datenimport.
+- Multiple-Choice-Modus mit mehreren Antwortoptionen zur Erweiterung des Lernmodus.
+- Möglichkeit zur Bearbeitung bestehender Vokabeln direkt im Terminal.
+- Fortschrittssystem mit Punkten oder Lernstufen zur Motivation und Nachverfolgung.
+- GUI-Version mit grafischer Benutzeroberfläche als alternative Bedienoption.
+- Unterstützung weiterer Sprachen und zusätzlicher Kategorien.
+- Benutzerkonten mit individuellen Lernstatistiken und getrennten Profilen.
+
+## **Fazit**
+
+- VocaLearn ist ein schlanker, gut strukturierter Vokabeltrainer, der die wichtigsten Funktionen für einen produktiven Lernworkflow bietet: schnelle Eingabe, gezielte Abfrage, Fortschrittsaufzeichnung und Wiederholung von Fehlern.
+- Das Projekt hat zentrale technische Grundlagen vertieft, insbesondere die Arbeit mit objektorientierter Programmierung, die Verwaltung von Daten mit JSON und CSV sowie die Zusammenarbeit über Git/GitHub.
+- Die modulare Struktur in separaten Modulen (`vocalearn.py`, `vokabel.py`, `datenbank.py`) macht den Code wartbar und gut erweiterbar.
+- Die Teamarbeit wurde durch klare Aufgabenverteilung und regelmäßige Abstimmung gestärkt; der Lernprozess war geprägt von iterativem Debugging und der Verbesserung der Benutzerführung.
