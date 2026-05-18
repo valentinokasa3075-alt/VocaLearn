@@ -22,8 +22,18 @@ def neue_vokabel_hinzufuegen():
     # Benutzer wählt eine Kategorie (z.B. Englisch oder Französisch)
     kategorie = input("Gib eine Kategorie ein (z.B. Englisch, Französisch): ")
 
+    # Prüfen ob gültige Kategorie eingegeben wurde
+    if kategorie != "Englisch" and kategorie != "Französisch":
+        print("Ungültige Kategorie. Bitte Englisch oder Französisch eingeben.")
+        return
+
     # Benutzer wählt ein Niveau (z.B. B1 oder B2)
     niveau = input("Gib ein Niveau ein (z.B. B1, B2): ")
+
+    # Prüfen ob gültiges Niveau eingegeben wurde
+    if niveau != "B1" and niveau != "B2":
+        print("Ungültiges Niveau. Bitte nur B1 oder B2 eingeben.")
+        return
 
     # Benutzer überprüft die eingegebenen Daten vor dem Speichern
     print("\nBitte überprüfe deine Eingaben:")
