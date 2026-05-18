@@ -159,8 +159,12 @@ def lernen_starten():
     elif fragen_auswahl == "2":
         anzahl_fragen = 10
 
-    else:
+    elif fragen_auswahl == "3":
         anzahl_fragen = len(vokabeln)
+
+    else:
+        print("Ungültige Eingabe.")
+        return
 
     # Falls weniger Vokabeln vorhanden sind als gewählt
     if anzahl_fragen > len(vokabeln):
