@@ -57,8 +57,39 @@ def neue_vokabel_hinzufuegen():
     # Aktualisierte Vokabelliste wieder in die Datei speichern
     speichere_vokabeln(vokabeln)
 
-    print("Vokabel wurde gespeichert.")
+    print("Vokabel wurde erfolgreich gespeichert.")
 
+    # Funktion: Vokabel löschen
+def vokabel_loeschen():
+
+    # Gespeicherte Vokabeln laden
+    vokabeln = lade_vokabeln()
+
+    # Prüfen ob Vokabeln vorhanden sind
+    if len(vokabeln) == 0:
+        print("Keine Vokabeln vorhanden.")
+        return
+
+    print("\n--- Gespeicherte Vokabeln ---")
+
+    # Alle Vokabeln nummeriert anzeigen
+    for i, vokabel in enumerate(vokabeln):
+        print(f"{i+1} - {vokabel['frage']} → {vokabel['antwort']} ({vokabel['kategorie']} | {vokabel['niveau']})")
+
+    try:
+        # Benutzer wählt Nummer der Vokabel
+        auswahl = int(input("\nWelche Vokabel möchtest du löschen? "))
+
+        # Gewählte Vokabel aus Liste löschen
+        del vokabeln[auswahl - 1]
+
+        # Aktualisierte Liste speichern
+        speichere_vokabeln(vokabeln)
+
+        print("Vokabel wurde erfolgreich gelöscht")
+
+    except:
+        print("Ungültige Eingabe.")
 
     # Funktion: Lernmodus starten
 def lernen_starten():
@@ -270,10 +301,10 @@ def hauptmenue():
     while True:
 
         # Menü wird angezeigt
-        print("\n--- VocaLearn ---")
         print("1 - Neue Vokabel hinzufügen")
-        print("2 - Lernen starten")
-        print("3 - Programm beenden")
+        print("2 - Vokabel löschen")
+        print("3 - Lernen starten")
+        print("4 - Programm beenden")
 
         auswahl = input("Bitte wählen: ")
 
@@ -282,16 +313,17 @@ def hauptmenue():
             neue_vokabel_hinzufuegen()
 
         elif auswahl == "2":
-            lernen_starten()
+            vokabel_loeschen()
 
         elif auswahl == "3":
+            lernen_starten()
+
+        elif auswahl == "4":
             print("Programm beendet.")
             break
-
+        
         else:
-            print("Ungültige Eingabe.")
-
-
+            print("Ungültige Eingabe!")
 # Startpunkt des Programms
 # Dieser Teil sorgt dafür, dass das Menü gestartet wird
 if __name__ == "__main__":
