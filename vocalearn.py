@@ -57,6 +57,19 @@ def neue_vokabel_hinzufuegen():
     # Vorhandene Vokabeln aus der JSON-Datei laden
     vokabeln = lade_vokabeln()
 
+    # Prüfen ob die Vokabel bereits existiert
+    for vokabel in vokabeln:
+
+        if (
+        vokabel["frage"].lower() == frage.lower()
+        and vokabel["antwort"].lower() == antwort.lower()
+        and vokabel["kategorie"].lower() == kategorie.lower()
+        and vokabel["niveau"].lower() == niveau.lower()
+    ):
+
+            print("Diese Vokabel existiert bereits.")
+            return
+
     # Neue Vokabel als Objekt der Klasse "Vokabel" erstellen
     neue_vokabel = Vokabel(frage, antwort, kategorie, niveau)
 
