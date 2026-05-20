@@ -2,7 +2,6 @@
 
 import random
 import os
-import webbrowser
 
 from vokabel import Vokabel
 from datenbank import lade_vokabeln, speichere_vokabeln
