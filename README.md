@@ -71,6 +71,7 @@ python3 vocalearn.py
 - Validierung für Kategorie und Niveau bei der Eingabe (Akzeptierte Werte: `Englisch`, `Französisch`, `B1`, `B2`).
 - Numerische Auswahl (z. B. bei Lösch- und Kategorienwahl) mit Fehlerbehandlung und freundlichen Fehlermeldungen.
 - Bestätigungsabfrage vor dem finalen Speichern neuer Vokabeln, um Eingabefehler zu vermeiden.
+- Prüfung auf doppelte Vokabeln, damit identische Einträge nicht mehrfach gespeichert werden.
 
 ## **OOP / Klassenstruktur**
 
@@ -85,6 +86,7 @@ Die Klasse kapselt Daten und Validierungslogik, der Rest des Programms arbeitet 
 - Speicherung: `speichere_vokabeln(vokabeln)` schreibt die komplette Liste als JSON in `vocalearn_data.json`.
 - Laden: `lade_vokabeln()` liest die Datei und liefert die Vokabelliste (leer, falls Datei fehlt oder fehlerhaft).
 - Pfadhandling: `datenbank.py` verwendet den Ordner der Datei als Basis, sodass relative Pfade konsistent sind.
+ - Falls die JSON-Datei noch nicht existiert, wird automatisch eine leere Liste zurückgegeben (`FileNotFoundError`), damit das Programm nicht abstürzt.
 
 ## **CSV Lernstatistik**
 
@@ -131,7 +133,7 @@ Die Klasse kapselt Daten und Validierungslogik, der Rest des Programms arbeitet 
 
 - **Datenpersistenz (JSON):** Arbeiten mit `vocalearn_data.json` machte Fehlerquellen wie fehlende Dateien und Encoding-Probleme sichtbar; robuste Lade-/Speicherfunktionen und UTF-8-Encoding verbesserten die Zuverlässigkeit.
 
-- **Fehlerbehandlung & Validierung:** Validierung von Kategorien und Niveaus sowie defensives Parsen numerischer Eingaben verringerten Laufzeitfehler und verbesserten die Nutzerführung.
+- **Fehlerbehandlung & Validierung:** Validierung von Kategorien und Niveaus sowie defensives Parsen numerischer Eingaben verringerten Laufzeitfehler und verbesserten die Nutzerführung. Gezielte Fehlerbehandlung mit `ValueError` bei numerischen Benutzereingaben erhöht die Robustheit und erlaubt präzisere Fehlermeldungen.
 
 - **Debugging & Logikfehler:** Kleinere Logikfehler wurden iterativ identifiziert und behoben; systematisches Testen einzelner Funktionen und gezieltes Logging beschleunigten die Fehlersuche.
 
