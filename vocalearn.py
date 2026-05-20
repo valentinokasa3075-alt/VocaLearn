@@ -115,7 +115,7 @@ def vokabel_loeschen():
 
         print("Vokabel wurde erfolgreich gelöscht")
 
-    except:
+    except ValueError:
         print("Ungültige Eingabe.")
 
 # Funktion: Lernmodus starten
@@ -158,7 +158,7 @@ def lernen_starten():
             # sonst gewählte Kategorie aus Liste nehmen
             gewaehlte_kategorie = kategorien[auswahl - 1]
 
-    except:
+    except ValueError:
         print("Ungültige Auswahl.")
         return
 
