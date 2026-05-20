@@ -12,7 +12,7 @@ def lade_vokabeln():
     try:
         with open(DATEI_PFAD, "r", encoding="utf-8") as datei:
             return json.load(datei)
-    except:
+    except FileNotFoundError:
         return []
 
 
