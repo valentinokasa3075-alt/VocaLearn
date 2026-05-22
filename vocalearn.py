@@ -257,7 +257,6 @@ def lernen_starten():
 
         # Frage wird angezeigt (inkl. Kategorie zur Orientierung)
         print(f"\nFrage ({vokabel['kategorie']} | {vokabel['niveau']}):", vokabel["frage"])
-        antwort = input("Antwort: ").strip()
 
         # Aus Dictionary wird wieder ein Vokabel-Objekt erstellt
         aktuelle_vokabel = Vokabel(
@@ -266,6 +265,51 @@ def lernen_starten():
             vokabel["kategorie"],
             vokabel["niveau"]
         )
+
+        # Multiple Choice Modus
+        if lernmodus == "2":
+
+            # Richtige Antwort speichern
+            richtige_antwort = aktuelle_vokabel.antwort
+
+            # Liste für falsche Antworten
+            falsche_optionen = []
+
+            # Zufällige falsche Antworten sammeln
+            for andere_vokabel in vokabeln:
+
+                if andere_vokabel["antwort"] != richtige_antwort:
+                    falsche_optionen.append(andere_vokabel["antwort"])
+
+            # 3 falsche Antworten auswählen
+            falsche_optionen = random.sample(falsche_optionen, 3)
+
+            # Alle Antwortmöglichkeiten zusammenführen
+            optionen = falsche_optionen + [richtige_antwort]
+
+            # Antworten mischen
+            random.shuffle(optionen)
+
+            # Antwortmöglichkeiten anzeigen
+            print("\nAntwortmöglichkeiten:")
+
+            for i, option in enumerate(optionen):
+                print(f"{i+1} - {option}")
+
+            # Benutzer wählt Antwort
+            auswahl = input("Bitte wählen: ").strip()
+
+            try:
+                auswahl = int(auswahl)
+
+                antwort = optionen[auswahl - 1]
+
+            except (ValueError, IndexError):
+                print("Ungültige Eingabe.")
+                continue
+
+        else:
+            antwort = input("Antwort: ").strip()
 
         # Überprüfung der Antwort mithilfe der Methode der Klasse
         if aktuelle_vokabel.pruefe_antwort(antwort):
