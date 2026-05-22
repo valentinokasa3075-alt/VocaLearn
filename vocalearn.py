@@ -241,6 +241,17 @@ def lernen_starten():
     # Liste für falsch beantwortete Vokabeln
     falsche_vokabeln = []
 
+    # Benutzer wählt den Lernmodus
+    print("\nWelchen Lernmodus möchtest du verwenden?")
+    print("1 - Normaler Lernmodus")
+    print("2 - Multiple Choice")
+
+    lernmodus = input("Bitte wählen: ").strip()
+
+    if lernmodus != "1" and lernmodus != "2":
+        print("Ungültige Eingabe.")
+        return  
+
     # Haupt-Lernschleife
     for vokabel in vokabeln:
 
