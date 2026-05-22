@@ -35,6 +35,7 @@ python3 vocalearn.py
 - **Niveausystem:** Jede Vokabel trägt ein Niveau (`B1` oder `B2`); Filterung im Lernmodus ist möglich.
 - **B1/B2-Filter:** Auswahl des gewünschten Niveaus vor dem Start der Abfrage.
 - **Zufällige Fragenauswahl:** Auswahl von N zufälligen Vokabeln per `random.sample`.
+- **Multiple-Choice-Modus:** Benutzer kann zwischen normalem Lernmodus und Multiple-Choice wählen; im Multiple-Choice-Modus werden drei zufällige falsche Antworten erzeugt und die Antwortmöglichkeiten per `random.shuffle()` gemischt.
 - **Wiederholung falscher Antworten:** Falsch beantwortete Vokabeln werden am Ende nochmals abgefragt.
 - **Vokabel löschen:** Interaktive Löschfunktion mit nummerierter Auswahl (`vokabel_loeschen()`).
 - **CSV-Lernstatistik:** Lernergebnisse werden in `lernstatistik.csv` angehängt und zur Auswertung geöffnet.
@@ -64,7 +65,7 @@ python3 vocalearn.py
 
 - **Neue Vokabel hinzufügen (`neue_vokabel_hinzufuegen`)**: Interaktive Eingabe, Validierung für Kategorie (`Englisch` oder `Französisch`) und Niveau (`B1` oder `B2`), Bestätigung vor Speichern.
 - **Vokabel löschen (`vokabel_loeschen`)**: Nummerierte Anzeige aller Einträge, Auswahl per Index, Speichern nach Löschung.
-- **Lernmodus (`lernen_starten`)**: Kategorieauswahl inkl. `ALLE`, Auswahl der Frageanzahl (5, 10, Alle), Niveau-Auswahl (B1/B2/Alle), zufällige Auswahl per `random.sample`, sofortiges Feedback.
+- **Lernmodus (`lernen_starten`)**: Kategorieauswahl inkl. `ALLE`, Auswahl der Frageanzahl (5, 10, Alle), Niveau-Auswahl (B1/B2/Alle), Wahl zwischen normalem Lernmodus und Multiple-Choice, zufällige Auswahl per `random.sample`, sofortiges Feedback.
 
 ## **Eingabevalidierung & Benutzerfreundlichkeit**
 
@@ -146,7 +147,6 @@ Diese Erkenntnisse zeigen, wie wiederholte Tests, modulare Struktur und abgestim
 - Weitere Tests zur Überprüfung der Programmfunktionen.
 - Verbesserte Eingabevalidierung und Vermeidung von Fehleingaben.
 - Weitere Komfortfunktionen für den Lernmodus und den Datenimport.
-- Multiple-Choice-Modus mit mehreren Antwortoptionen zur Erweiterung des Lernmodus.
 - Möglichkeit zur Bearbeitung bestehender Vokabeln direkt im Terminal.
 - Fortschrittssystem mit Punkten oder Lernstufen zur Motivation und Nachverfolgung.
 - GUI-Version mit grafischer Benutzeroberfläche als alternative Bedienoption.
