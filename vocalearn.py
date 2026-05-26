@@ -53,6 +53,11 @@ def neue_vokabel_hinzufuegen():
         print("\nDie Vokabel wird erneut eingegeben.\n")
         neue_vokabel_hinzufuegen()
         return
+    
+    # Falls weder 1 noch 2 eingegeben wurde
+    elif bestaetigung != "1":
+        print("Ungültige Auswahl.")
+        return
 
     # Vorhandene Vokabeln aus der JSON-Datei laden
     vokabeln = lade_vokabeln()
