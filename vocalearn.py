@@ -158,7 +158,7 @@ def lernen_starten():
             # sonst gewählte Kategorie aus Liste nehmen
             gewaehlte_kategorie = kategorien[auswahl - 1]
 
-    except ValueError:
+    except (ValueError, IndexError):
         print("Ungültige Auswahl.")
         return
 
