@@ -123,6 +123,26 @@ def vokabel_loeschen():
     except ValueError:
         print("Ungültige Eingabe.")
 
+# Funktion: Gespeicherte Vokabeln anzeigen
+def gespeicherte_vokabeln_anzeigen():
+
+    # Gespeicherte Vokabeln laden
+    vokabeln = lade_vokabeln()
+
+    # Prüfen ob Vokabeln vorhanden sind
+    if len(vokabeln) == 0:
+        print("Keine Vokabeln vorhanden.")
+        return
+
+    print("\n===== Gespeicherte Vokabeln =====")
+
+    # Alle Vokabeln nummeriert anzeigen
+    for i, vokabel in enumerate(vokabeln):
+        print(f"{i+1} - {vokabel['frage']} → {vokabel['antwort']} ({vokabel['kategorie']} | {vokabel['niveau']})")
+
+    # Gesamtanzahl anzeigen
+    print(f"\nInsgesamt gespeichert: {len(vokabeln)} Vokabeln")
+
 # Funktion: Lernmodus starten
 def lernen_starten():
 
@@ -398,10 +418,11 @@ def hauptmenue():
         # Menü wird angezeigt
         print("1 - Neue Vokabel hinzufügen")
         print("2 - Vokabel löschen")
-        print("3 - Lernen starten")
-        print("4 - Programm beenden")
+        print("3 - Gespeicherte Vokabeln anzeigen")
+        print("4 - Lernen starten")
+        print("5 - Programm beenden")
 
-        auswahl = input("Bitte wählen: ").strip()
+        auswahl = input("Bitte wählen: ")
 
         # Je nach Eingabe wird eine Funktion ausgeführt
         if auswahl == "1":
@@ -411,14 +432,15 @@ def hauptmenue():
             vokabel_loeschen()
 
         elif auswahl == "3":
-            lernen_starten()
+            gespeicherte_vokabeln_anzeigen()
 
         elif auswahl == "4":
+            lernen_starten()
+
+        elif auswahl == "5":
             print("Programm beendet.")
             break
-        
-        else:
-            print("Ungültige Eingabe!")
+
 # Startpunkt des Programms
 # Dieser Teil sorgt dafür, dass das Menü gestartet wird
 if __name__ == "__main__":
