@@ -11,23 +11,24 @@
 
 ## **Minimalziel**
 
-- **Vokabeleingabe:** Benutzer können Vokabeln inkl. Frage, Antwort, Kategorie und Niveau hinzufügen (`neue_vokabel_hinzufuegen()`).
-- **Persistenz:** Speicherung und Laden aller Vokabeln in `vocalearn_data.json` über `datenbank.py`.
-- **Lernmodus:** Zufällige Abfrage einer auswählbaren Anzahl Vokabeln mit sofortigem Feedback (`lernen_starten()`).
-- **Auswertung:** Anzeige von richtig/falsch-Zählern und Trefferquote in Prozent; Speicherung der Statistik in `lernstatistik.csv`.
+- **Vokabeleingabe:** Frage und Antwort erfassen; Unterstützung für Englisch und Französisch (`neue_vokabel_hinzufuegen()`).
+- **Persistenz:** Speicherung und Laden der Vokabeln in `vocalearn_data.json` über `datenbank.py`.
+- **Lernmodus:** Einfacher Übungsmodus mit zufälligen Fragen und sofortigem Feedback (`lernen_starten()`).
+- **Auswertung:** Anzeige von richtigen und falschen Antworten.
 
 Diese Kernfunktionen sind vollständig implementiert und bilden die Basis des Programms.
 
 ## **Schnellstart**
 
 1. Python 3 installieren.
-2. Im Projektordner ausführen:
+2. Es wird kein `requirements.txt` benötigt; alle Abhängigkeiten sind standardmäßig in Python 3 enthalten.
+3. Im Projektordner ausführen:
 
 ```bash
 python3 vocalearn.py
 ```
 
-3. Menü folgen: Vokabeln hinzufügen → Lernen starten → Statistik einsehen.
+4. Menü folgen: Vokabeln hinzufügen → Lernen starten → Statistik einsehen.
 
 ## **Erweiterungen (bereits umgesetzt)**
 
@@ -38,6 +39,7 @@ python3 vocalearn.py
 - **Multiple-Choice-Modus:** Benutzer kann zwischen normalem Lernmodus und Multiple-Choice wählen; im Multiple-Choice-Modus werden drei zufällige falsche Antworten erzeugt und die Antwortmöglichkeiten per `random.shuffle()` gemischt.
 - **Wiederholung falscher Antworten:** Falsch beantwortete Vokabeln werden am Ende nochmals abgefragt.
 - **Vokabel löschen:** Interaktive Löschfunktion mit nummerierter Auswahl (`vokabel_loeschen()`).
+- **Trefferquote in Prozent:** Zusätzlich zur Anzeige von richtig/falsch wird eine prozentuale Trefferquote berechnet und angezeigt.
 - **CSV-Lernstatistik:** Lernergebnisse werden in `lernstatistik.csv` angehängt und zur Auswertung geöffnet.
 
 ## **Technische Umsetzung**
