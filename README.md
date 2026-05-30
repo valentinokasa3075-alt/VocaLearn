@@ -39,6 +39,7 @@ python3 vocalearn.py
 - **Multiple-Choice-Modus:** Benutzer kann zwischen normalem Lernmodus und Multiple-Choice wählen; im Multiple-Choice-Modus werden drei zufällige falsche Antworten erzeugt und die Antwortmöglichkeiten per `random.shuffle()` gemischt.
 - **Wiederholung falscher Antworten:** Falsch beantwortete Vokabeln werden am Ende nochmals abgefragt.
 - **Vokabel löschen:** Interaktive Löschfunktion mit nummerierter Auswahl (`vokabel_loeschen()`).
+- **Gespeicherte Vokabeln anzeigen:** Übersicht aller gespeicherten Vokabeln mit Nummer, Frage, Antwort, Kategorie und Niveau; Gesamtanzahl wird angezeigt (`vokabeln_anzeigen()`).
 - **Trefferquote in Prozent:** Zusätzlich zur Anzeige von richtig/falsch wird eine prozentuale Trefferquote berechnet und angezeigt.
 - **CSV-Lernstatistik:** Lernergebnisse werden in `lernstatistik.csv` angehängt und zur Auswertung geöffnet.
 
@@ -57,7 +58,7 @@ python3 vocalearn.py
 ## **Programmablauf (Kurz)**
 
 1. Programmstart → `hauptmenue()`.
-2. Menü: Neue Vokabel hinzufügen, Vokabel löschen, Lernen starten, Beenden.
+2. Menü: Neue Vokabel hinzufügen, Vokabel löschen, Gespeicherte Vokabeln anzeigen, Lernen starten, Beenden.
 3. Bei Hinzufügen: Eingabe von Frage, Antwort, Kategorie, Niveau → Validierung → Speichern.
 4. Beim Lernen: Kategorienliste anzeigen → Kategorie/Niveau wählen → Anzahl der Fragen wählen → Zufällige Auswahl → Abfrage.
 5. Ergebnisse: Anzeige Richtig/Falsch, Trefferquote, Anfügen an `lernstatistik.csv` und Öffnen der CSV.
@@ -67,7 +68,9 @@ python3 vocalearn.py
 
 - **Neue Vokabel hinzufügen (`neue_vokabel_hinzufuegen`)**: Interaktive Eingabe, Validierung für Kategorie (`Englisch` oder `Französisch`) und Niveau (`B1` oder `B2`), Bestätigung vor Speichern.
 - **Vokabel löschen (`vokabel_loeschen`)**: Nummerierte Anzeige aller Einträge, Auswahl per Index, Speichern nach Löschung.
+- **Gespeicherte Vokabeln anzeigen (`vokabeln_anzeigen`)**: Lädt alle Vokabeln aus der JSON-Datei und zeigt sie nummeriert an; Ausgabe umfasst Frage, Antwort, Kategorie und Niveau; am Ende wird die Gesamtanzahl der gespeicherten Vokabeln angezeigt.
 - **Lernmodus (`lernen_starten`)**: Kategorieauswahl inkl. `ALLE`, Auswahl der Frageanzahl (5, 10, Alle), Niveau-Auswahl (B1/B2/Alle), Wahl zwischen normalem Lernmodus und Multiple-Choice, zufällige Auswahl per `random.sample`, sofortiges Feedback.
+- **Programm beenden**: Sauberer Exit aus dem Hauptmenü mit Abschlussmeldung.
 
 ## **Eingabevalidierung & Benutzerfreundlichkeit**
 
